@@ -6,6 +6,7 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
     environment:
+      MYSQL_DATABASE: app_development
       MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: password
     ports:
@@ -20,6 +21,9 @@ services:
       - 8000:8000
     environment:
       DB_HOST: db
+      DB_USER: root
+      DB_NAME: app_development
+      DB_PASSWORD: password
     links:
       - db
 volumes:
